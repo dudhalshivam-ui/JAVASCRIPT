@@ -14,7 +14,7 @@ let str1 = new String("shivam")
 
 console.log(str1.length);
 console.log(str1[0]); // s
-console.log(str[14]); // a
+console.log(str1[4]); // a
 console.log(str1.toUpperCase()); // SHIAVM
 console.log(str1.toLowerCase()); // shivam
 

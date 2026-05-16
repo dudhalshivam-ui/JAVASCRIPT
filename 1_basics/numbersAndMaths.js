@@ -9,14 +9,14 @@
 
 // console.log(Number.MIN_SAFE_INTEGER); //Smallest safe integer
 
-// console.log(Number.NaN);
-// console.log("abc"/2);
+console.log(Number.NaN);
+console.log("abc"/2);
 
 
 // // Number.EPSILON ⭐ (Important): Smallest difference between two numbers
 
-// console.log(Number.EPSILON);
-// console.log(0.1 + 0.2 === 0.3); // false
+console.log(Number.EPSILON);
+console.log(0.1 + 0.2 === 0.3); // false
 
 // // fix
 // console.log(Math.abs((0.1+0.2)-0.3)<Number.EPSILON)// true
@@ -43,14 +43,14 @@ const hundreds = 100000000
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// console.log(Math);
-// console.log(Math.abs(-4))// convert -ve values into positive
-// console.log(Math.round(5.7))// rounds of the value
-// console.log(Math.ceil(3.3))// gives upper value 
-// console.log(Math.floor(3.9)) // gives lower value
-// console.log(Math.floor(Math.random()*10))//output : 0-9
-// console.log(Math.floor(Math.random()*10)+1)// output : 1-10
-// console.log(Math.min(6,38,2,47,10))
-// console.log(Math.max(6,38,2,47,10))
+console.log(Math);
+console.log(Math.abs(-4))// convert -ve values into positive
+console.log(Math.round(5.7))// rounds of the value
+console.log(Math.ceil(3.3))// gives upper value 
+console.log(Math.floor(3.9)) // gives lower value
+console.log(Math.floor(Math.random()*10))//output : 0-9
+console.log(Math.floor(Math.random()*10)+1)// output : 1-10
+console.log(Math.min(6,38,2,47,10))
+console.log(Math.max(6,38,2,47,10))
 
 console.log(Math.floor(Math.random()*(15-5+1)+5))

@@ -7,7 +7,7 @@ let myName = "shivam";
 let anotherName = myName;
 anotherName = "bala";
 
-console.log(anotherName);
+// console.log(anotherName);
 console.log(myName);
 
 // Reference : we get reference of objects , arrays etc

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: black; color: white; font-family: Arial, sans-serif;">
+ 
+
+    
+</body>
+<script>
+   const Div = document.createElement('div');
+   console.log(Div.outerHTML);
+   Div.className = "main";
+   Div.id = Math.round((Math.random()*10 +1)) ;
+
+   Div.setAttribute('title', " this is generated title");
+   Div.style.backgroundColor = "green";
+   Div.style.width= "70%";
+   Div.style.height = "28px";
+//    Div.innerText = "This is a dynamically created div element.";
+   const addtext = document.createTextNode("This is a dynamically created div element.");
+   Div.appendChild(addtext);
+   Div.appendChild(addtext);
+   console.log(Div.outerHTML);
+
+   document.body.appendChild(Div);
+    
+</script>
+</html>  

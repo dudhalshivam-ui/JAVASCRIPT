@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white; font-family: Arial, sans-serif;">
+    
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple webpage to demonstrate DOM manipulation.</p>    
+        <ul>
+            <li> shivam </li>
+            <li> harsh </li>
+            <li> rohit </li>
+
+        </ul>
+    
+        <form action="post">
+            <label for="name">name</label>
+            <input type="text" id="name">
+            <br>
+            <!-- <br>
+            <label for="email">email</label>
+            <input type="email" id="email"> -->
+        </form>
+        
+        
+    </div>
+</body>
+<script>
+    function addname(name){
+        const li = document.createElement('li')
+        li.innerHTML = name
+        document.querySelector('ul').appendChild(li)
+    }
+
+    // addname("<h1> hii </h1>")
+    addname("shambhu")
+
+    function optaddname(name){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(name))
+        document.querySelector("ul").appendChild(li)
+    }
+    
+    optaddname("<h1> hii </h1>")
+
+    
+    const label = document.createElement('lable')
+     label.innerHTML = "email "
+     document.querySelector("form").appendChild(label)
+     // document.querySelector("form").appendChild(input)
+
+   const input= document.createElement("input")
+   input.type ="email"
+//    input.placeholder="enter email"
+   document.querySelector('form').appendChild(input)
+   
+
+</script>
+</html>
