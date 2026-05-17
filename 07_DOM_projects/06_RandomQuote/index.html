@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes</title>
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to right, #141e30, #243b55);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+
+    width: 60vw;
+    max-width: 700px;
+
+    min-height: 300px;
+
+    background-color: rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#Quote{
+
+    color: white;
+
+    font-size: 2rem;
+
+    line-height: 1.5;
+
+    margin-top: 30px;
+}
+
+#button{
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: orange;
+
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#button:hover{
+
+    transform: scale(1.05);
+
+    background-color: rgb(255, 140, 0);
+}
+
+    </style>        
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="Quote" style=""> </h1>
+      <button id="button">generate quote</button>
+    </div>
+    <script>
+      const Quote = document.getElementById("Quote");
+      const btn = document.getElementById("button");
+
+      const quotes = [
+        "Discipline is choosing what you want most over what you want now.",
+
+        "Small improvements every day become massive results over time.",
+
+        "Confidence is built by doing things before you feel ready.",
+
+        "You do not learn deeply by watching. You learn deeply by struggling.",
+
+        "Consistency beats intensity when intensity cannot be sustained.",
+
+        "Most people quit when things get boring. Mastery begins when boredom starts.",
+
+        "Your future is heavily influenced by what you repeatedly do today.",
+
+        "Being confused while learning is not failure. It is proof that your brain is adapting.",
+
+        "The gap between beginners and experts is usually persistence, not talent.",
+
+        "A year from now, you will wish you had started today.",
+      ];
+
+      btn.addEventListener("click", function () {
+        const Qno = Math.floor(Math.random() * 10);
+        console.log(Qno);
+        Quote.innerHTML = quotes[Qno];
+      });
+    </script>
+  </body>
+</html>

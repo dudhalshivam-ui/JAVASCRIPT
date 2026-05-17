@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            display: inline-flex ;
+            flex-direction: column;
+            background-color: cadetblue;
+            margin: auto;
+            
+            
+        }
+        .box{
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            /* background-color: aqua; */
+        }
+        #box1{
+            background-color: brown;
+            
+        }
+        #box2{
+            background-color: blue;
+
+        }
+        #box3{
+            background-color: blueviolet;
+
+        }
+        #box4{
+            background-color: chartreuse;
+
+
+        }
+        #box5{
+            background-color: chocolate;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="box"  id="box1"></div>
+        <div class="box"  id="box2"></div>
+        <div class="box"  id="box3"></div>
+        <div class="box"  id="box4"></div>
+        <div class="box"  id="box5"></div>
+       
+    </div>
+
+    <script>
+        const boxex = document.getElementById("parent")
+        // boxex.addEventListener("click",(e)=>{
+        //     e.target.textContent = " i am clicked" 
+        // })
+
+
+        function isclicked(e){
+            console.log(e.target)
+            // if(e.target.id=="parent"){
+            //     return
+            // }
+
+            if(!e.target.classList.contains("box")){
+                return
+            }
+
+            e.target.textContent=" i am clicked " + e.target.id
+            const background = getComputedStyle(e.target).backgroundColor
+            document.body.style.backgroundColor=background
+            // boxex.removeEventListener("click",isclicked)
+        }
+        document.getElementById("parent").addEventListener("click",isclicked)
+
+
+        
+    </script>
+
+    
+    
+</body>
+</html>

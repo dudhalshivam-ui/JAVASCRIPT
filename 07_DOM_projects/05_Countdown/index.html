@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>countdown</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        padding: 10px;
+        background-color: green;
+        border: solid white;
+        border-radius: 20px;
+      }
+      #countdown{
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exams starting in</h1>
+      <div id="countdown" ></div>
+    </div>
+
+    <script>
+      let exams = new Date("2026-06-05");
+      const countdown = document.getElementById("countdown");
+
+      setInterval(function () {
+
+          let curretdate = new Date();
+          let diff = exams - curretdate;
+
+       if(diff <= 0){
+
+            countdown.textContent = "Countdown is ended"
+
+            return
+        }
+
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdown.textContent = `time remaining :${days}:${hours}:${minutes}:${seconds}`;
+      }, 1000);
+    </script>
+  </body>
+</html>
