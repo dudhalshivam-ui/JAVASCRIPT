@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="color: red;"> NUMBER GUSSSING GAME</h2>
+
+        
+        <form id="form">
+            
+            <label for="Guess" > Enter the Guess :  </label>
+            <input type="number" id="Guess" >
+            <br>
+            <input type="submit" id="button" value="submit">
+        </form>
+        
+        <div id="result">
+            <p id="correct"></p>
+            <p>previous Guess : <span id="previous"> </span></p>
+            <p> Guess remainnig : <span id="remainnig" > </span> </p>
+            
+            
+        </div>
+        
+    </div>
+        
+        <script>
+        const num = Math.floor(Math.random()*100)+1
+        console.log(num)
+        
+        const form = document.getElementById("form")
+        const Guess = document.getElementById("Guess")
+        const btn = document.getElementById("button")
+        const result = document.getElementById("result")
+        const correct = document.getElementById("correct")
+        const previous = document.getElementById("previous")
+        const remainnigAtmpt = document.getElementById("remainnig")
+
+        let PArray = [];
+        let atmpt = 10;
+
+
+        form.addEventListener("submit" , function(event){
+            event.preventDefault()
+            const guess = parseInt(Guess.value);
+
+            validateinput(guess)
+
+            
+            
+        })
+
+        function validateinput(guess){
+
+          if(guess==="" || isNaN(guess)){
+            alert("please enter valid number")
+            console.log("plese enter valid number")
+          }else if(guess>100){
+            alert("please select below 100")
+
+          }else if(guess<1){
+            alert(" please enter above 1")
+          }else{
+            displayresult(guess)
+
+          }
+
+        }
+
+        function displayresult(guess ){
+            if(guess===num){
+                correct.innerHTML= `correct Guess ${num}`
+                console.log("correct")
+                PArray.push(guess)
+
+            }else if(guess>num){
+                console.log(" too high")
+                correct.innerHTML= "number is too high"
+                PArray.push(guess)
+        
+            }else {
+                console.log(" too low")
+                correct.innerHTML= "number is too low "
+                PArray.push(guess)
+            }
+            
+            atmpt = atmpt-1
+            remainnigAtmpt.innerHTML= atmpt
+            previous.innerHTML = `guesses : ${ PArray} `
+
+            
+           if(atmpt===0){
+            Guess.disabled = true
+            btn.disabled = true
+            correct.innerHTML= `Game over: number was the ${num}`
+           }
+            
+        }
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
